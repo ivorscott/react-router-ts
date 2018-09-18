@@ -736,7 +736,7 @@ const logos = {
 export default function TeamLogo(props: { id: string; width?: string }) {
   return (
     <svg {...props} x="0px" y="0px" viewBox="0 0 125.397 125.397">
-      {logos[props.id] as object}
+      {logos[props.id]}
     </svg>
   );
 }

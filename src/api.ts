@@ -1,10 +1,11 @@
 import { teams, players, generateArticle, generateTeamsArticles } from './dummy-data';
+import { IPlayerDetails } from './components/Players/types';
 
 let cachedPlayers: any = null;
 const cachedTeams: any = {};
 let cachedTeamNames: any = null;
 
-export function getPlayers(teamId: string) {
+export function getPlayers(teamId: any): Promise<IPlayerDetails[]> {
   return new Promise(res => {
     if (cachedPlayers === null) {
       cachedPlayers = players;
@@ -43,7 +44,7 @@ export function getArticle(teamId: string, id: any) {
   });
 }
 
-export function getTeamsArticles(teamId:string) {
+export function getTeamsArticles(teamId: string) {
   return new Promise(res => {
     setTimeout(() => res(generateTeamsArticles(teamId)), 700);
   });

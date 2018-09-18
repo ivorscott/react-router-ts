@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@types/query-string": "^6.1.0",
     "@types/react-router-dom": "^4.3.1",
     "@types/slug": "^0.9.0",
+    "query-string": "^6.1.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-router-dom": "^4.3.1",
@@ -22,6 +24,7 @@
     "@types/node": "^10.9.4",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "prettier": "^1.14.2"
   }
 }
