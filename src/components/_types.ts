@@ -16,7 +16,7 @@ export interface IPlayerDetails {
   name: string;
   position: string;
   teamId: string;
-  number: number;
+  num: number;
   avatar: string;
   apg: number;
   rpg: number;
@@ -25,6 +25,7 @@ export interface IPlayerDetails {
 }
 export interface IPlayersProps {
   location: any;
+  match: any;
 }
 export interface IPlayersState {
   players: IPlayerDetails[];

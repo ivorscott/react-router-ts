@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route, Link } from 'react-router-dom';
-import { ICustomLink } from '../Types';
+import { ICustomLink } from '../_types';
 
 /* Change the style of a link */
 export function CustomLink(props: ICustomLink) {

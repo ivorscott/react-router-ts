@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { Home } from './Home';
 import { Players } from './Players';
 import { Teams } from './Teams';
-import { PageNotFound } from './PageNotFound';
+import { PageNotFound } from './_404';
 import { Navbar } from './Navbar';
 
 const App: React.SFC = () => (

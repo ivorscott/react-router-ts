@@ -7,7 +7,7 @@ export const Navbar: React.SFC = () => {
       <Link to="/">Home</Link>
       <div className="nav-links">
         <Link to="/players">Players</Link>
-        <Link to="/team">Team</Link>
+        <Link to="/teams">Teams</Link>
       </div>
     </div>
   );
