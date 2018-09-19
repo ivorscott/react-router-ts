@@ -2,8 +2,7 @@ import * as React from 'react';
 import { Sidebar } from '../Sidebar';
 import { getPlayers } from '../../api';
 import { parse } from 'query-string';
-import { IPlayersProps, IPlayersState } from './types';
-import { ITeam } from '../Teams/types';
+import { IPlayersProps, IPlayersState, ITeam } from '../Types';
 
 export default class Players extends React.Component<IPlayersProps, IPlayersState> {
   constructor(props: IPlayersProps) {

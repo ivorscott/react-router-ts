@@ -1,5 +1,5 @@
 import { teams, players, generateArticle, generateTeamsArticles } from './dummy-data';
-import { IPlayerDetails } from './components/Players/types';
+import { IPlayerDetails } from './components/Types';
 
 let cachedPlayers: any = null;
 const cachedTeams: any = {};

@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 import * as slug from 'slug';
-import { ISidebarProps } from './types';
+import { ISidebarProps } from '../Types';
 import { CustomLink } from '../CustomLink';
 
 export const Sidebar: React.SFC<ISidebarProps> = ({ title, players, loading, location, match }) => {
