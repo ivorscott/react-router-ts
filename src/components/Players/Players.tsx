@@ -5,11 +5,11 @@ import { Route, Link } from 'react-router-dom';
 import { getPlayers } from '../../api';
 import { parse } from 'query-string';
 import * as slug from 'slug';
-import { IPlayersProps, IPlayersState, ITeam, IPlayerDetails } from '../_types';
+import { IPage, IPlayersPageState, IPlayerDetails } from '../_types';
 
-export default class Players extends React.Component<IPlayersProps, IPlayersState> {
-  constructor(props: IPlayersProps) {
-    // if you have props in a class, you need a constructor to pass props to the parent
+export default class Players extends React.Component<IPage, IPlayersPageState> {
+  constructor(props: IPage) {
+    // If you extend Component you need a constructor and super(props)
     super(props);
     this.state = {
       players: [],
@@ -23,7 +23,7 @@ export default class Players extends React.Component<IPlayersProps, IPlayersStat
     location.search ? this.fetchPlayers(parse(location.search).teamId) : this.fetchPlayers();
   }
 
-  fetchPlayers = (teamId?: ITeam): void => {
+  fetchPlayers = (teamId?: string): void => {
     getPlayers(teamId).then((players: IPlayerDetails[]) =>
       this.setState(() => ({
         loading: false,

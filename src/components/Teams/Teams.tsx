@@ -1,7 +1,42 @@
-import * as React from 'react';
+/*tslint:disable: no-console*/
 
-export default class Home extends React.Component {
+import * as React from 'react';
+import { Sidebar } from '../Sidebar';
+import { getTeamNames } from '../../api';
+import { ITeamPageState, IPage } from '../_types';
+
+export default class Home extends React.Component<IPage, ITeamPageState> {
+  constructor(props: IPage) {
+    super(props);
+    this.state = {
+      teamNames: [],
+      loading: true
+    };
+  }
+
+  componentDidMount() {
+    getTeamNames().then((teamNames: string[]) => {
+      this.setState(() => ({
+        loading: false,
+        teamNames
+      }));
+    });
+  }
+
   render() {
-    return <div className="container">TEAMS</div>;
+    const { loading, teamNames } = this.state;
+    const { location } = this.props;
+
+    return (
+      <div className="container two-column">
+        <Sidebar loading={loading} title="Teams" players={teamNames} {...this.props} />
+
+        {loading === false && location.pathname === '/teams' ? (
+          <div className="sidebar-instruction">Select a Team</div>
+        ) : null}
+
+        
+      </div>
+    );
   }
 }
