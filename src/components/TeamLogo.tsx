@@ -734,9 +734,9 @@ const logos = {
   )
 };
 
-export const TeamLogo: React.SFC<ITeamLogo> = (props: { id: string; width: string }) => {
+export const TeamLogo: React.SFC<ITeamLogo> = (props: { id: string }) => {
   return (
-    <svg {...props} x="0px" y="0px" viewBox="0 0 125.397 125.397">
+    <svg style={{ width: 200 }} {...props} x="0px" y="0px" viewBox="0 0 125.397 125.397">
       {logos[props.id]}
     </svg>
   );

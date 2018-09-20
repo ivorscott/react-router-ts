@@ -48,5 +48,4 @@ export interface ITeamPageState {
 }
 export interface ITeamLogo {
   id: string;
-  width?: string;
 }
