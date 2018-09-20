@@ -1,6 +1,6 @@
 /* tslint:disable no-console */
 import * as React from 'react';
-import TeamLogo from '../TeamLogo';
+import { TeamLogo } from '../TeamLogo';
 import { Link } from 'react-router-dom';
 import { getTeamNames } from '../../api';
 import { IHomeState } from '../_types';

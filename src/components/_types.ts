@@ -35,7 +35,18 @@ export interface ICustomLink {
 export interface IHomeState {
   teamNames: string[];
 }
-export interface ITeamPageState {
+export interface ITeamsPageState {
   teamNames: string[];
   loading: boolean;
+}
+export interface ITeamPageProps {
+  id: string;
+  children: any;
+}
+export interface ITeamPageState {
+  team: any;
+}
+export interface ITeamLogo {
+  id: string;
+  width?: string;
 }

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { ITeamLogo } from './_types';
 
 const logos = {
   bulls: (
@@ -733,10 +734,10 @@ const logos = {
   )
 };
 
-export default function TeamLogo(props: { id: string; width?: string }) {
+export const TeamLogo: React.SFC<ITeamLogo> = (props: { id: string; width: string }) => {
   return (
     <svg {...props} x="0px" y="0px" viewBox="0 0 125.397 125.397">
       {logos[props.id]}
     </svg>
   );
-}
+};
