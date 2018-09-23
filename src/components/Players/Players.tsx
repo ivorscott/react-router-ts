@@ -37,7 +37,7 @@ export default class Players extends React.Component<IPage, IPlayersPageState> {
     const { match, location } = this.props;
     return (
       <div className="container two-column">
-        <Sidebar loading={loading} title="Players" players={players.map(player => player.name)} {...this.props} />
+        <Sidebar loading={loading} title="Players" list={players.map(player => player.name)} {...this.props} />
         {loading === false && location.pathname === '/players' ? (
           <div className="sidebar-instruction">Select a PLayer</div>
         ) : null}

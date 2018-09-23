@@ -27,11 +27,9 @@ export default class Home extends React.Component<IHomePageState> {
         <h3 className="header text-center">Select a team</h3>
         <div className="home-grid">
           {teamNames.map(id => (
-            <div>
-              <Link key={id} to={`/${id}`}>
-                <TeamLogo id={id} />
-              </Link>
-            </div>
+            <Link key={id} to={`/${id}`}>
+              <TeamLogo id={id} />
+            </Link>
           ))}
         </div>
       </div>

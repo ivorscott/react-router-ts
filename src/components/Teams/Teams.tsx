@@ -32,7 +32,7 @@ export default class Home extends React.Component<IPage, ITeamsState> {
 
     return (
       <div className="container two-column">
-        <Sidebar loading={loading} title="Teams" players={teamNames} {...this.props} />
+        <Sidebar loading={loading} title="Teams" list={teamNames} {...this.props} />
 
         {loading === false && location.pathname === '/teams' ? (
           <div className="sidebar-instruction">Select a Team</div>
@@ -64,7 +64,7 @@ export default class Home extends React.Component<IPage, ITeamsState> {
                           <div>{team.coach}</div>
                         </li>
                       </ul>
-                      <Link className="center btn-main" to={`/${match.params.teamId}`}>
+                      <Link className="center btn-main" to={`/${props.match.params.teamId}`}>
                         {team.name} Team Page
                       </Link>
                     </div>

@@ -5,14 +5,14 @@ import * as slug from 'slug';
 import { ISidebarProps } from '../_types';
 import { CustomLink } from '../CustomLink';
 
-export const Sidebar: React.SFC<ISidebarProps> = ({ title, players, loading, location, match }) => {
+export const Sidebar: React.SFC<ISidebarProps> = ({ title, list, loading, location, match }) => {
   return loading === true ? (
     <h1>LOADING</h1>
   ) : (
     <div>
       <h3 className="header">{title}</h3>
       <ul className="sidebar-list">
-        {players.map(player => (
+        {list.map((player: any) => (
           <CustomLink
             key={player}
             to={{

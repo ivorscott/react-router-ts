@@ -54,7 +54,7 @@ export default class TeamPage extends React.Component<IPage, ITeamPageState> {
                   </Link>
                 </h4>
                 <ul className="chanmpionships">
-                  {team.chanmpionships.map((ship: any) => (
+                  {team.championships.map((ship: any) => (
                     <li key={ship}>{ship}</li>
                   ))}
                 </ul>
@@ -80,14 +80,14 @@ export default class TeamPage extends React.Component<IPage, ITeamPageState> {
                 </ul>
                 <h2 className="header">Articles</h2>
                 <ul className="articles">
-                  {articles.map((article: any) => {
+                  {articles.map((article: { id: string; title: string; date: Date }) => (
                     <li key={article.id}>
                       <Link to={`${match.url}/articles/${slug(article.title)}`}>
                         <h4 className="article-title">{article.title}</h4>
-                        <div className="article-date">{article.date.toLocalDateString()}</div>
+                        <div className="article-date">{article.date.toLocaleDateString()}</div>
                       </Link>
-                    </li>;
-                  })}
+                    </li>
+                  ))}
                 </ul>
               </div>
             )

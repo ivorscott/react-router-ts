@@ -4,7 +4,7 @@ export interface ICustomLink {
 }
 export interface ISidebarProps {
   title: string;
-  players: string[];
+  list: string[];
   loading: boolean;
   match?: any;
   location?: any;
@@ -57,4 +57,22 @@ export interface ITeamProps {
 }
 export interface ITeamLogo {
   id: string;
+}
+export interface IArticleDetails {
+  date: Date;
+  title: string;
+  id: string;
+  body?: string;
+}
+export interface IArticlesPageState {
+  loading: boolean;
+  teamArticles: string[];
+}
+export interface IArticlePageProps {
+  articleId: string;
+  teamId: string;
+  children: any;
+}
+export interface IArticlePageState {
+  article: IArticleDetails | null;
 }
