@@ -1,10 +1,11 @@
 # React Router and TypeScript
 
+![alt text](/src/images/1.png "Home page")
 Source: https://github.com/tylermcginnis/React-Router-Course-Project/tree/animate
 
 ------------------
 
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+This project was bootstrapped with [Create React App (TypeScript)](https://github.com/wmonk/create-react-app-typescript).
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
