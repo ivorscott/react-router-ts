@@ -24,7 +24,7 @@ const App: React.SFC = () => (
         <Route component={PageNotFound} />
       </Switch>
       <footer style={{ position: 'fixed', bottom: 0, padding: 20,width: "100%",background: "#abe"}}>
-      <h3><u>Source: https://github.com/tylermcginnis/React-Router-Course-Project/tree/animate</u></h3>
+      <h3><a style={{textDecoration:"underline"}} href="https://github.com/tylermcginnis/React-Router-Course-Project/tree/animate" target="_blank">Source: https://github.com/tylermcginnis/React-Router-Course-Project/tree/animate</a></h3>
       </footer>
     </div>
   </Router>
