@@ -20,6 +20,10 @@ export interface IPlayerDetails {
   spg: number;
   ppg: number;
 }
+export interface ICustomLink {
+  to: any;
+  children: any;
+}
 export interface IPage {
   location: any;
   match: any;
@@ -28,23 +32,28 @@ export interface IPlayersPageState {
   players: IPlayerDetails[];
   loading: boolean;
 }
-export interface ICustomLink {
-  to: any;
-  children: any;
-}
-export interface IHomeState {
+export interface IHomePageState {
   teamNames: string[];
 }
-export interface ITeamsPageState {
-  teamNames: string[];
+export interface ITeamPageState {
+  teamNames: any[];
+  loading: boolean;
+  articles: any[];
+}
+export interface ITeamsState {
+  teamNames: any[];
   loading: boolean;
 }
-export interface ITeamPageProps {
+export interface ITeamDetailsProps {
   id: string;
   children: any;
 }
-export interface ITeamPageState {
+export interface ITeamDetailsState {
   team: any;
+}
+export interface ITeamProps {
+  id: string;
+  children: any;
 }
 export interface ITeamLogo {
   id: string;

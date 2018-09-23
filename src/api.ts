@@ -16,7 +16,7 @@ export function getPlayers(teamId: any): Promise<IPlayerDetails[]> {
   });
 }
 
-export function getTeam(teamId: string) {
+export function getTeam(teamId: string): Promise<any[]> {
   return new Promise(res => {
     if (typeof cachedTeams[teamId] === 'undefined') {
       cachedTeams[teamId] = teams[teamId];
@@ -27,7 +27,7 @@ export function getTeam(teamId: string) {
   });
 }
 
-export function getTeamNames() {
+export function getTeamNames(): Promise<any> {
   return new Promise(res => {
     if (cachedTeamNames === null) {
       cachedTeamNames = Object.keys(teams);
@@ -38,13 +38,13 @@ export function getTeamNames() {
   });
 }
 
-export function getArticle(teamId: string, id: any) {
+export function getArticle(teamId: string, id: any): Promise<any> {
   return new Promise(res => {
     setTimeout(() => res(generateArticle(teamId, id)), 700);
   });
 }
 
-export function getTeamsArticles(teamId: string) {
+export function getTeamsArticles(teamId: string): Promise<any> {
   return new Promise(res => {
     setTimeout(() => res(generateTeamsArticles(teamId)), 700);
   });

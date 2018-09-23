@@ -1,8 +1,8 @@
 import * as React from 'react';
 import { getTeam } from '../../api';
-import { ITeamPageProps, ITeamPageState } from '../_types';
+import { ITeamDetailsProps, ITeamDetailsState } from '../_types';
 
-export default class Team extends React.Component<ITeamPageProps, ITeamPageState> {
+export default class Team extends React.Component<ITeamDetailsProps, ITeamDetailsState> {
   constructor(props: { id: string; children: any }) {
     super(props);
     this.state = {

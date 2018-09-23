@@ -4,11 +4,11 @@ import * as React from 'react';
 import { Sidebar } from '../Sidebar';
 import { getTeamNames } from '../../api';
 import { Route, Link } from 'react-router-dom';
-import { ITeamsPageState, IPage } from '../_types';
+import { ITeamsState, IPage } from '../_types';
 import { TeamLogo } from '../TeamLogo';
 import { Team } from '../Team';
 
-export default class Home extends React.Component<IPage, ITeamsPageState> {
+export default class Home extends React.Component<IPage, ITeamsState> {
   constructor(props: IPage) {
     super(props);
     this.state = {
