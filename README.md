@@ -1,7 +1,6 @@
 # React Router and TypeScript
 
 ![alt text](/src/images/1.png "Home page")
-Source: https://github.com/tylermcginnis/React-Router-Course-Project/tree/animate
 
 ------------------
 
