@@ -7,6 +7,7 @@ import { Route, Link } from 'react-router-dom';
 import { ITeamsState, IPage } from '../_types';
 import { TeamLogo } from '../TeamLogo';
 import { Team } from '../Team';
+import { Loading } from '../Loading';
 
 export default class Home extends React.Component<IPage, ITeamsState> {
   constructor(props: IPage) {
@@ -45,7 +46,9 @@ export default class Home extends React.Component<IPage, ITeamsState> {
               <Team id={props.match.params.teamId}>
                 {(team: any) =>
                   team === null ? (
-                    <h1>LOADING</h1>
+                    <h1>
+                      <Loading text="Loading" />
+                    </h1>
                   ) : (
                     <div style={{ width: '100%', textAlign: 'center' }}>
                       <TeamLogo id={team.id} />

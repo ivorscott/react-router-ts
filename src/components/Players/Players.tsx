@@ -6,6 +6,7 @@ import { getPlayers } from '../../api';
 import { parse } from 'query-string';
 import * as slug from 'slug';
 import { IPage, IPlayersPageState, IPlayerDetails } from '../_types';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 export default class Players extends React.Component<IPage, IPlayersPageState> {
   constructor(props: IPage) {
@@ -56,45 +57,49 @@ export default class Players extends React.Component<IPage, IPlayersPageState> {
             const { name, avatar, position, num, teamId, ppg, apg, spg, rpg } = selectedPlayer as IPlayerDetails;
 
             return (
-              <div className="panel">
-                <img className="avatar" src={avatar} alt={`${name}'s avatar`} />
-                <h2 className="medium-header" />
-                <h3 className="header">#{num}</h3>
-                <div className="row">
-                  <ul className="info-list" style={{ marginRight: 80 }}>
-                    <li>
-                      Team
-                      <div>
-                        <Link style={{ color: '#68809a' }} to={`/${teamId}`}>
-                          {teamId[0].toUpperCase() + teamId.slice(1)}
-                        </Link>
-                      </div>
-                    </li>
-                    <li>
-                      Position
-                      <div>{position}</div>
-                    </li>
-                    <li>
-                      PPG
-                      <div>{ppg}</div>
-                    </li>
-                  </ul>
-                  <ul className="info-list">
-                    <li>
-                      APG
-                      <div>{apg}</div>
-                    </li>
-                    <li>
-                      SPG
-                      <div>{spg}</div>
-                    </li>
-                    <li>
-                      RPG
-                      <div>{rpg}</div>
-                    </li>
-                  </ul>
-                </div>
-              </div>
+              <TransitionGroup className="panel">
+                <CSSTransition key={location.key} timeout={350} classNames="fade">
+                  <div className="panel">
+                    <img className="avatar" src={avatar} alt={`${name}'s avatar`} />
+                    <h2 className="medium-header" />
+                    <h3 className="header">#{num}</h3>
+                    <div className="row">
+                      <ul className="info-list" style={{ marginRight: 80 }}>
+                        <li>
+                          Team
+                          <div>
+                            <Link style={{ color: '#68809a' }} to={`/${teamId}`}>
+                              {teamId[0].toUpperCase() + teamId.slice(1)}
+                            </Link>
+                          </div>
+                        </li>
+                        <li>
+                          Position
+                          <div>{position}</div>
+                        </li>
+                        <li>
+                          PPG
+                          <div>{ppg}</div>
+                        </li>
+                      </ul>
+                      <ul className="info-list">
+                        <li>
+                          APG
+                          <div>{apg}</div>
+                        </li>
+                        <li>
+                          SPG
+                          <div>{spg}</div>
+                        </li>
+                        <li>
+                          RPG
+                          <div>{rpg}</div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </CSSTransition>
+              </TransitionGroup>
             );
           }}
         />

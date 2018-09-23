@@ -76,3 +76,10 @@ export interface IArticlePageProps {
 export interface IArticlePageState {
   article: IArticleDetails | null;
 }
+export interface ILoadingProps {
+  text: string;
+}
+export interface ILoadingState {
+  text: string;
+  interval: number;
+}

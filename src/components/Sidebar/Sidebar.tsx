@@ -4,10 +4,13 @@ import * as React from 'react';
 import * as slug from 'slug';
 import { ISidebarProps } from '../_types';
 import { CustomLink } from '../CustomLink';
+import {Loading} from '../Loading';
 
 export const Sidebar: React.SFC<ISidebarProps> = ({ title, list, loading, location, match }) => {
   return loading === true ? (
-    <h1>LOADING</h1>
+    <h1>
+      <Loading text="Loading" />
+    </h1>
   ) : (
     <div>
       <h3 className="header">{title}</h3>

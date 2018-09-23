@@ -4,6 +4,7 @@ import { Sidebar } from '../Sidebar';
 import { IPage, IArticlesPageState, IArticleDetails } from '../_types';
 import { getTeamsArticles } from '../../api';
 import { Article } from '../Article';
+import { Loading } from '../Loading';
 
 export default class Articles extends React.Component<IPage, IArticlesPageState> {
   constructor(props: IPage) {
@@ -28,7 +29,9 @@ export default class Articles extends React.Component<IPage, IArticlesPageState>
     const { params, url } = this.props.match;
     const { teamId } = params;
     return loading === true ? (
-      <h1>LOADING</h1>
+      <h1>
+        <Loading text="Loading" />
+      </h1>
     ) : (
       <div className="container two-column">
         <Sidebar loading={loading} title="Articles" list={teamArticles} {...this.props} />
@@ -39,7 +42,9 @@ export default class Articles extends React.Component<IPage, IArticlesPageState>
             <Article articleId={match.params.articleId} teamId={teamId}>
               {(article: IArticleDetails) =>
                 !article ? (
-                  <h1>LOADING</h1>
+                  <h1>
+                    <Loading text="Loading" />
+                  </h1>
                 ) : (
                   <div className="panel">
                     <article className="article" key={article.id}>

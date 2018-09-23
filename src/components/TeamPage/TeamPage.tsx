@@ -6,6 +6,7 @@ import { TeamLogo } from '../TeamLogo';
 import { Team } from '../Team';
 import { IPage, ITeamPageState } from '../_types';
 import * as slug from 'slug';
+import { Loading } from '../Loading';
 
 export default class TeamPage extends React.Component<IPage, ITeamPageState> {
   constructor(props: IPage) {
@@ -43,7 +44,9 @@ export default class TeamPage extends React.Component<IPage, ITeamPageState> {
         <Team id={teamId}>
           {(team: any) =>
             team === null ? (
-              <h1>LOADING</h1>
+              <h1>
+                <Loading text="Loading" />
+              </h1>
             ) : (
               <div className="panel">
                 <TeamLogo id={teamId} />
