@@ -26,7 +26,7 @@ export default class Articles extends React.Component<IPage, IArticlesPageState>
   render() {
     const { loading, teamArticles } = this.state;
     const { params, url } = this.props.match;
-    const { teamId, articleId } = params;
+    const { teamId } = params;
     return loading === true ? (
       <h1>LOADING</h1>
     ) : (
@@ -35,8 +35,8 @@ export default class Articles extends React.Component<IPage, IArticlesPageState>
 
         <Route
           path={`${url}/:articleId`}
-          render={() => (
-            <Article articleId={articleId} teamId={teamId}>
+          render={({ match }) => (
+            <Article articleId={match.params.articleId} teamId={teamId}>
               {(article: IArticleDetails) =>
                 !article ? (
                   <h1>LOADING</h1>

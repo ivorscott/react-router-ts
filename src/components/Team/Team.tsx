@@ -3,7 +3,7 @@ import { getTeam } from '../../api';
 import { ITeamDetailsProps, ITeamDetailsState } from '../_types';
 
 export default class Team extends React.Component<ITeamDetailsProps, ITeamDetailsState> {
-  constructor(props: { id: string; children: any }) {
+  constructor(props: ITeamDetailsProps) {
     super(props);
     this.state = {
       team: null

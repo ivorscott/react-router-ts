@@ -11,16 +11,22 @@ export default class Article extends React.Component<IArticlePageProps, IArticle
     };
   }
 
-  getArticle = (teamId: string, articleId: string) => {
-    this.setState(() => ({
-      article: null
-    }));
+  componentDidMount() {
+    const { teamId, articleId } = this.props;
+    this.getArticle(teamId, articleId);
+  }
 
-    getArticle(teamId, articleId).then((article: IArticleDetails) =>
+  componentDidUpdate() {
+    const { teamId, articleId } = this.props;
+    this.getArticle(teamId, articleId);
+  }
+
+  getArticle = (teamId: string, articleId: string) => {
+    getArticle(teamId, articleId).then((article: IArticleDetails) => {
       this.setState(() => ({
         article
-      }))
-    );
+      }));
+    });
   };
 
   render() {
